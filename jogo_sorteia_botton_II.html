@@ -1,0 +1,85 @@
+<meta charset="UTF-8">
+
+<input/>
+<button>Compare com o segredo</button>
+
+<script>
+
+// var segredos = [Math.round(Math.random() * 10), Math.round(Math.random() * 10), Math.round(Math.random() * 10)]; ou
+// var segredos = [];
+// segredos.push(Math.round(Math.random() * 10))
+// segredos.push(Math.round(Math.random() * 10))
+// segredos.push(Math.round(Math.random() * 10))
+// ou
+
+function sorteia() {
+
+	return Math.round(Math.random() * 10);
+
+}
+
+function quantidadeNumeros(quantidade) {
+
+	var segredosFuncao = [];
+	var numeros = 1;
+
+	while(numeros <= quantidade) {
+
+		var numeroAleatorio = sorteia();
+		var achou = false
+
+		if(numeroAleatorio !== 0) {
+
+			for (var posicaoFuncao = 0; posicaoFuncao < segredosFuncao.length; posicaoFuncao++) {
+
+				if(segredosFuncao[posicaoFuncao] == numeroAleatorio) {
+					achou = true;
+					break;
+				}
+			}
+
+			if(achou == false) {
+				segredosFuncao.push(numeroAleatorio);
+				numeros++
+			}
+		}
+	}
+
+	return segredosFuncao;
+}
+
+var segredos = quantidadeNumeros(4);
+
+console.log(segredos);
+console.log(segredos.length);
+
+var entrada = document.querySelector("input");
+
+var errou = true;
+
+function verifica() {
+
+	for(var posicao = 0; posicao < segredos.length; posicao++) {
+
+	    if(entrada.value == segredos[posicao]) {
+
+	        alert("Você ACERTOU!!!");
+	        errou = false;
+	        break;
+	    }
+	}   
+		
+	if(errou == true) {
+
+		alert("Você ERROU!!!!!!");
+	}
+
+    entrada.value = "";
+    entrada.focus();
+}
+    
+    var botao = document.querySelector("button");
+    botao.onclick = verifica;
+
+// o verifica sem () para que o conteúdo seja apenas guardado no botao.onclick e então executado no click. Caso contrário o programa ao ser carregado executaria a função direto.
+</script>

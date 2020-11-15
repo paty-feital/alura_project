@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+
+<script>
+
+	function mostra(frase) {
+
+		pulaLinha();
+		document.write("***" + frase + "***");
+		
+	}
+
+	function pulaLinha() {
+
+		document.write("<br>");
+
+	}
+
+	var ano = 2020
+	var anoZero = 1500
+	var idadeMedia = 28
+
+    mostra("O número de gerações desde " + anoZero + " até " + ano + " é: " + Math.round((ano - anoZero) / idadeMedia));
+    
+
+</script>

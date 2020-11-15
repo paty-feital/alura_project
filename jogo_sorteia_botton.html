@@ -1,0 +1,30 @@
+<meta charset="UTF-8">
+
+<input/>
+<button>Compare com o segredo</button>
+
+<script>
+
+var segredo = Math.round(Math.random() * 10);
+console.log(segredo);
+var entrada = document.querySelector("input");
+
+function verifica() {
+
+    if(entrada.value == segredo) {
+
+        alert("Você ACERTOU!!!");
+    } else{
+
+        alert("Você ERROU!!!!!!");
+    }
+    entrada.value = "";
+    entrada.focus();
+}
+    
+    var botao = document.querySelector("button");
+    
+    botao.onclick = verifica;
+
+// o verifica sem () para que o conteúdo seja apenas guardado no botao.onclick e então executado no click. Caso contrário o programa ao ser carregado executaria a função direto.
+</script>
