@@ -1,0 +1,45 @@
+
+<!-- saved from url=(0069)file:///H:/Alura%20Cursos/Logica%20II/triangulos_esquadro_funcao.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"></head><body><canvas width="600" height="400"></canvas>
+
+<script>
+	
+	function desenhaEsquadro(xa, ya, xc, yc, cor) {
+
+		var tela = document.querySelector('canvas');
+		var pincel = tela.getContext('2d');
+
+		pincel.fillStyle = 'white';
+
+		pincel.fillStyle = cor;
+		pincel.beginPath();
+		pincel.moveTo(xa, ya);
+		pincel.lineTo(xc, yc);
+		pincel.lineTo(xa, yc);
+		pincel.fill();
+
+		pincel.fillStyle = 'white'
+        pincel.beginPath();
+        pincel.moveTo((6*xa + xc)/7, (9*ya + 5*yc)/14);
+        pincel.lineTo((6*xa + xc)/7, (ya + 6*yc)/7);
+        pincel.lineTo((5*xa + 9*xc)/14, (ya + 6*yc)/7);
+        pincel.fill();
+	}
+
+	var xa = 230;
+	var ya = 40;
+	var xc = 350;
+	var yc = 200;
+	var cor = 'darkblue';
+
+	desenhaEsquadro(xa, ya, xc, yc, cor);
+
+	var xa = 50;
+	var ya = 50;
+	var xc = 400;
+	var yc = 400;
+	var cor = 'darkgreen';
+
+	desenhaEsquadro(xa, ya, xc, yc, cor);
+
+</script></body></html>
